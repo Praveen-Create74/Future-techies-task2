@@ -21,6 +21,20 @@
       scroll-behavior: smooth;
     }
 
+    /* Logo Animation */
+    .logo {
+      font-size: 2em;
+      font-weight: bold;
+      color: white;
+      animation: pulse 2s infinite;
+    }
+
+    @keyframes pulse {
+      0% { transform: scale(1); color: var(--highlight);}
+      50% { transform: scale(1.2); color: #fff;}
+      100% { transform: scale(1); color: var(--highlight);}
+    }
+
     /* Hero Section */
     header {
       height: 100vh;
@@ -68,6 +82,30 @@
 
     nav a:hover {
       color: var(--highlight);
+    }
+
+    /* Search Bar */
+    .search-bar {
+      margin-top: 20px;
+    }
+    .search-bar input {
+      padding: 10px;
+      width: 300px;
+      border-radius: 5px;
+      border: none;
+    }
+    .search-bar button {
+      padding: 10px 15px;
+      margin-left: 10px;
+      border: none;
+      border-radius: 5px;
+      background: var(--highlight);
+      color: white;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+    .search-bar button:hover {
+      background: #0099cc;
     }
 
     section {
@@ -127,6 +165,21 @@
       transform: scale(1.05);
     }
 
+    .btn {
+      display: inline-block;
+      padding: 10px 20px;
+      margin-top: 10px;
+      background: var(--highlight);
+      color: white;
+      border-radius: 5px;
+      text-decoration: none;
+      transition: background 0.3s;
+    }
+
+    .btn:hover {
+      background: #0099cc;
+    }
+
     footer {
       background: var(--secondary);
       color: white;
@@ -154,6 +207,7 @@
 </head>
 <body>
   <nav>
+    <span class="logo">CS Hub</span>
     <a href="#courses">Courses</a>
     <a href="#about">About</a>
     <a href="#contact">Contact</a>
@@ -162,36 +216,44 @@
   <header>
     <h1>CS Learning Hub</h1>
     <p>Free Courses • All Subjects • Computer Science</p>
+    <div class="search-bar">
+      <input type="text" placeholder="Search courses...">
+      <button>Search</button>
+    </div>
   </header>
 
   <section id="courses">
     <h2>📚 Free Courses</h2>
     <div class="card">
-      <img src="https://picsum.photos/800/400?random=5" alt="Programming">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/9/91/Python-logo-notext.svg" alt="Python">
       <h3>Programming Fundamentals</h3>
       <p>Learn Python, Java, and C++ from scratch with interactive examples.</p>
+      <a href="#contact" class="btn">Enroll Now</a>
     </div>
     <div class="card">
-      <img src="https://picsum.photos/800/400?random=6" alt="Data Structures">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/2/29/Structure_of_a_binary_tree.svg" alt="Data Structures">
       <h3>Data Structures & Algorithms</h3>
       <p>Master arrays, linked lists, trees, and graph algorithms with practice problems.</p>
+      <a href="#contact" class="btn">Enroll Now</a>
     </div>
     <div class="card">
-      <img src="https://picsum.photos/800/400?random=7" alt="Cloud Computing">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/9/93/Amazon_Web_Services_Logo.svg" alt="Cloud Computing">
       <h3>Cloud Computing</h3>
       <p>Explore AWS, Azure, and emulators like LocalStack for hands-on labs.</p>
+      <a href="#contact" class="btn">Enroll Now</a>
     </div>
     <div class="card">
-      <img src="https://picsum.photos/800/400?random=8" alt="Machine Learning">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/2/2d/Tensorflow_logo.svg" alt="Machine Learning">
       <h3>Machine Learning</h3>
       <p>Understand ML concepts with NumPy, Pandas, scikit-learn, TensorFlow, and PyTorch.</p>
+      <a href="#contact" class="btn">Enroll Now</a>
     </div>
   </section>
 
   <section id="about">
     <h2>🌐 About Us</h2>
     <div class="card">
-      <img src="https://picsum.photos/800/400?random=9" alt="About">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/3/3a/Computer-icon.svg" alt="About">
       <p>CS Learning Hub is a free online education platform offering curated courses across all computer science subjects. Our mission is to make learning accessible, dynamic, and engaging for everyone.</p>
     </div>
   </section>
@@ -199,30 +261,7 @@
   <section id="contact">
     <h2>📩 Contact</h2>
     <div class="card">
-      <img src="https://picsum.photos/800/400?random=10" alt="Contact">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/4/4e/Mail_%28iOS%29.svg" alt="Contact">
       <p>Email: support@cslearninghub.com</p>
       <p>Join our community and start learning today!</p>
-    </div>
-  </section>
-
-  <footer>
-    <p>© 2026 CS Learning Hub | Free Education for All</p>
-  </footer>
-
-  <script>
-    // Reveal sections on scroll
-    const sections = document.querySelectorAll("section");
-    const revealOnScroll = () => {
-      const triggerBottom = window.innerHeight * 0.85;
-      sections.forEach(section => {
-        const boxTop = section.getBoundingClientRect().top;
-        if (boxTop < triggerBottom) {
-          section.classList.add("visible");
-        }
-      });
-    };
-    window.addEventListener("scroll", revealOnScroll);
-    revealOnScroll();
-  </script>
-</body>
-</html>
+      <a href="#courses" class
