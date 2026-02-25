@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CS Learning Hub</title>
+  <style>
+    :root {
+      --primary: #0f2027;
+      --secondary: #203a43;
+      --accent: #2c5364;
+      --highlight: #00c6ff;
+      --light: #f4f6f8;
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: var(--light);
+      color: #333;
+      scroll-behavior: smooth;
+    }
+
+    /* Hero Section */
+    header {
+      height: 100vh;
+      background: linear-gradient(135deg, var(--primary), var(--secondary), var(--accent));
+      background-size: 400% 400%;
+      animation: gradientShift 10s ease infinite;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      color: white;
+      text-align: center;
+    }
+
+    header h1 {
+      font-size: 3.5em;
+      margin: 0;
+      animation: fadeInDown 2s ease;
+    }
+
+    header p {
+      font-size: 1.5em;
+      margin-top: 10px;
+      animation: fadeInUp 2s ease;
+    }
+
+    nav {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      background: rgba(15,32,39,0.9);
+      padding: 15px;
+      text-align: center;
+      z-index: 1000;
+      backdrop-filter: blur(6px);
+    }
+
+    nav a {
+      color: white;
+      margin: 0 20px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: color 0.3s;
+    }
+
+    nav a:hover {
+      color: var(--highlight);
+    }
+
+    section {
+      padding: 80px 20px;
+      max-width: 1200px;
+      margin: auto;
+      opacity: 0;
+      transform: translateY(40px);
+      transition: all 1s ease;
+    }
+
+    section.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    h2 {
+      text-align: center;
+      font-size: 2.2em;
+      margin-bottom: 40px;
+      color: var(--secondary);
+      position: relative;
+    }
+
+    h2::after {
+      content: '';
+      display: block;
+      width: 60px;
+      height: 4px;
+      background: var(--highlight);
+      margin: 10px auto 0;
+      border-radius: 2px;
+    }
+
+    .card {
+      background: white;
+      margin: 20px;
+      padding: 30px;
+      border-radius: 15px;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+      transition: transform 0.4s, box-shadow 0.4s;
+    }
+
+    .card:hover {
+      transform: translateY(-10px) scale(1.02);
+      box-shadow: 0 15px 40px rgba(0,0,0,0.2);
+    }
+
+    .card img {
+      width: 100%;
+      border-radius: 10px;
+      margin-bottom: 15px;
+      transition: transform 0.5s;
+    }
+
+    .card img:hover {
+      transform: scale(1.05);
+    }
+
+    footer {
+      background: var(--secondary);
+      color: white;
+      text-align: center;
+      padding: 20px;
+    }
+
+    /* Animations */
+    @keyframes gradientShift {
+      0% {background-position: 0% 50%;}
+      50% {background-position: 100% 50%;}
+      100% {background-position: 0% 50%;}
+    }
+
+    @keyframes fadeInDown {
+      from {opacity: 0; transform: translateY(-30px);}
+      to {opacity: 1; transform: translateY(0);}
+    }
+
+    @keyframes fadeInUp {
+      from {opacity: 0; transform: translateY(30px);}
+      to {opacity: 1; transform: translateY(0);}
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <a href="#courses">Courses</a>
+    <a href="#about">About</a>
+    <a href="#contact">Contact</a>
+  </nav>
+
+  <header>
+    <h1>CS Learning Hub</h1>
+    <p>Free Courses • All Subjects • Computer Science</p>
+  </header>
+
+  <section id="courses">
+    <h2>📚 Free Courses</h2>
+    <div class="card">
+      <img src="https://picsum.photos/800/400?random=5" alt="Programming">
+      <h3>Programming Fundamentals</h3>
+      <p>Learn Python, Java, and C++ from scratch with interactive examples.</p>
+    </div>
+    <div class="card">
+      <img src="https://picsum.photos/800/400?random=6" alt="Data Structures">
+      <h3>Data Structures & Algorithms</h3>
+      <p>Master arrays, linked lists, trees, and graph algorithms with practice problems.</p>
+    </div>
+    <div class="card">
+      <img src="https://picsum.photos/800/400?random=7" alt="Cloud Computing">
+      <h3>Cloud Computing</h3>
+      <p>Explore AWS, Azure, and emulators like LocalStack for hands-on labs.</p>
+    </div>
+    <div class="card">
+      <img src="https://picsum.photos/800/400?random=8" alt="Machine Learning">
+      <h3>Machine Learning</h3>
+      <p>Understand ML concepts with NumPy, Pandas, scikit-learn, TensorFlow, and PyTorch.</p>
+    </div>
+  </section>
+
+  <section id="about">
+    <h2>🌐 About Us</h2>
+    <div class="card">
+      <img src="https://picsum.photos/800/400?random=9" alt="About">
+      <p>CS Learning Hub is a free online education platform offering curated courses across all computer science subjects. Our mission is to make learning accessible, dynamic, and engaging for everyone.</p>
+    </div>
+  </section>
+
+  <section id="contact">
+    <h2>📩 Contact</h2>
+    <div class="card">
+      <img src="https://picsum.photos/800/400?random=10" alt="Contact">
+      <p>Email: support@cslearninghub.com</p>
+      <p>Join our community and start learning today!</p>
+    </div>
+  </section>
+
+  <footer>
+    <p>© 2026 CS Learning Hub | Free Education for All</p>
+  </footer>
+
+  <script>
+    // Reveal sections on scroll
+    const sections = document.querySelectorAll("section");
+    const revealOnScroll = () => {
+      const triggerBottom = window.innerHeight * 0.85;
+      sections.forEach(section => {
+        const boxTop = section.getBoundingClientRect().top;
+        if (boxTop < triggerBottom) {
+          section.classList.add("visible");
+        }
+      });
+    };
+    window.addEventListener("scroll", revealOnScroll);
+    revealOnScroll();
+  </script>
+</body>
+</html>
